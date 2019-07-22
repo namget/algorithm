@@ -2,6 +2,7 @@ package com.namget.algorism
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.namget.algorism.hash.solution
 
 class MainActivity : AppCompatActivity() {
 
