@@ -12,8 +12,11 @@ algorism study
 - 3.위장
 
 # 코딜리티
+-[100%] BinaryGap
+-[100%] OddOccurrencesInArray
+-[100%] CyclicRotation
 
-
+# 추후
 - dfs 공부예정..
 - 삼각형문제
 
