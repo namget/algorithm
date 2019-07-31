@@ -1,5 +1,5 @@
-# algorism
-algorism study
+# algorithm
+algorithm study
 
 
 - Fizz Buzz
