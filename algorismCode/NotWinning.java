@@ -1,4 +1,4 @@
-package com.namget.algorism;
+package com.namget.algorism.hash;
 
 import android.util.Log;
 
