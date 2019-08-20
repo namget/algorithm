@@ -9,19 +9,12 @@ public class MaxProductOfThree {
     public int solution(int[] A) {
         Arrays.sort(A);
         int result = Integer.MIN_VALUE;
-
-        if (result < A[0] * A[1] * A[2]) {
-            result = A[0] * A[1] * A[2];
-        }
-
         if (result < A[A.length - 1] * A[A.length - 2] * A[A.length - 3]) {
             result = A[A.length - 1] * A[A.length - 2] * A[A.length - 3];
         }
-
         if (result < A[0] * A[1] * A[A.length - 1]){
             result = A[0] * A[1] * A[A.length - 1];
         }
-
         return result;
     }
 }

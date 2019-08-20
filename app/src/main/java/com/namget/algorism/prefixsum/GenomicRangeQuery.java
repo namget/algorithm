@@ -1,40 +1,38 @@
 package com.namget.algorism.prefixsum;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class GenomicRangeQuery {
     public int[] solution(String S, int[] P, int[] Q) {
         // write your code in Java SE 8
         int[] result = new int[P.length];
+
         char[] s = S.toCharArray();
+        for(char a : s){
 
-        List<Integer> aList = new ArrayList<>();
-        List<Integer> cList = new ArrayList<>();
-        List<Integer> gList = new ArrayList<>();
-        List<Integer> tList = new ArrayList<>();
-
-        for (int i = 0; i < s.length; i++) {
-            if(s[i] == 'A'){
-                aList.add(i);
-            }
-            if(s[i] == 'C'){
-                cList.add(i);
-            }
-            if(s[i] == 'G'){
-                gList.add(i);
-            }
-            if(s[i] == 'T'){
-                tList.add(i);
-            }
         }
 
-        for (int i = 0; i < P.length; i++) {
-//            aList.containsAll()
+        S.replaceAll("A", "1");
+        S.replaceAll("C", "2");
+        S.replaceAll("G", "3");
+        S.replaceAll("T", "4");
+        int length = S.length();
+        int number = Integer.valueOf(S);
 
+        for (int i = 0; i < P.length; i++) {
+            result[i] = (int) ((number % Math.pow(10, length - P[i])) / Math.pow(10, length - Q[i]));
+        }
+
+        for (int i = 0; i < result.length; i++) {
+            int intResult = 0;
+            int n = result[i];
+            while (n != 0) {
+                intResult = (result[i] % 10);
+                n /= 10;
+            }
+            result[i] = intResult;
         }
 
         return result;
     }
+
 }
