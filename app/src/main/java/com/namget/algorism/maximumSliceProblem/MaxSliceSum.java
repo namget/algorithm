@@ -2,7 +2,7 @@ package com.namget.algorism.maximumSliceProblem;
 
 public class MaxSliceSum {
 
-    public static long solution(int[] A) {
+    public static int solution(int[] A) {
         // write your code in Java SE 8
         long maxEnding = 0;
         long maxSlice = Integer.MIN_VALUE;
@@ -24,6 +24,6 @@ public class MaxSliceSum {
                 maxValue = maxSlice;
             }
         }
-        return (maxValue > maxSlice) ? maxValue : maxSlice;
+        return (maxValue > maxSlice) ? (int)(maxValue) : (int)(maxSlice);
     }
 }
