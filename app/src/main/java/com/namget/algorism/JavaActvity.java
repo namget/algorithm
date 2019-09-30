@@ -6,16 +6,16 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.namget.algorism.maximumSliceProblem.MaxSliceSum;
+import com.namget.algorism.primeandcomposite.Peak;
 
 public class JavaActvity extends AppCompatActivity {
 
-    int a[] = {1, 3, -5, 3, 7, 14, 29};
-    int b[] = {1, 3, -5, 3, 7, 14, 29};
-    int c[] = {Integer.MIN_VALUE, Integer.MIN_VALUE, -5, 3, 7, 14, 29};
+    int a[] = {1, 2, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2};
+    int b[] = {1, 3, 2, 1};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MaxSliceSum.solution(b);
+        Peak.solution(b);
     }
 }
