@@ -15,7 +15,7 @@ public class Peak {
                 peakList.add(i);
             }
         }
-        if(peakList.size() <= 1){
+        if (peakList.size() <= 1) {
             return peakList.size();
         }
 
@@ -24,11 +24,11 @@ public class Peak {
             int result = 1;
             for (int j = 0; j < peakList.size() - 1; j++) {
                 if (div * (j + 1) >= peakList.get(j) && div * (j + 1) < peakList.get(j + 1)) {
-                    result ++;
+                    result++;
                 } else {
                     break;
                 }
-                if(div * result == A.length){
+                if (div * result == A.length) {
                     return result;
                 }
             }
