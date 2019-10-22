@@ -1,20 +1,35 @@
-package com.namget.algorism.sieve;
+package com.namget.algorism;
 
-public class CountSemiprimes {
+import org.junit.Test;
 
-    public int[] solution(int N, int[] P, int[] Q) {
+public class AlgorismTest {
+
+    @Test
+    public void countSemiPrimes() {
+        int N = 26;
+        int[] P = new int[3];
+        P[0] = 1;
+        P[1] = 4;
+        P[2] = 16;
+        int[] Q = new int[3];
+        Q[0] = 26;
+        Q[1] = 10;
+        Q[2] = 20;
 
         int[] result = new int[P.length];
+        //false로 초기화
+
+
+        //소수 구하는 법
+        boolean[] isNotPrime = new boolean[N + 1];
         // 0으로 초기화
         int[] primeArray = new int[N + 1];
-
         int[] addedList = new int[N + 1];
 
-
         //0 = 소수
-        //2이상 = 노소수
+        //1 =  노소수
 
-        System.out.println(primeArray[3]);
+//        System.out.println(primeArray[3]);
 
         primeArray[0] = 1;
         primeArray[1] = 1;
@@ -56,8 +71,10 @@ public class CountSemiprimes {
             i++;
         }
 
+
+
 //        System.out.println("index = " + k + " isPrime = " + primeArray[k]);
-        //갯수구하기
+
 //        for (int a = 0; a < P.length; a++) {
 //            int count = 0;
 //            for (int k = P[a]; k <= Q[a]; k++) {
@@ -69,18 +86,23 @@ public class CountSemiprimes {
 //        }
 
         int count = 0;
-        for (int a = 2; a < N; a++) {
+        for (int a = 2; a <= N; a++) {
             if(primeArray[a] == -1){
                 count++;
             }
+//            System.out.println("index = " + a + " count = " + count);
             addedList[a] = count;
         }
 
         for(int k = 0; k < result.length; k++) {
-            result[k] = addedList[Q[k]] - addedList[P[k] - 1];
+            result[k] = addedList[Q[k]] - addedList[P[k]-1 ];
             System.out.println("index = " + k + " isPrime = " + result[k]);
+//            System.out.println("Q[k] = " + Q[k] + " P[k] = " + P[k]);
+//            System.out.println("addedList[Q[k]] = " + addedList[Q[k]] + " addedList[P[k] = " + addedList[P[k]]);
         }
 
-        return result;
     }
+
+
+
 }
