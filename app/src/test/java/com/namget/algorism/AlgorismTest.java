@@ -50,6 +50,10 @@ public class AlgorismTest {
             i++;
         }
 
+//        for(int z = 0; z < primeArray.length; z++){
+//            System.out.println("z : " + z + " " + primeArray[z]);
+//        }
+
         //1 ~ 100
         // 4 / 2 == prime ==0
         //
@@ -71,7 +75,9 @@ public class AlgorismTest {
             i++;
         }
 
-
+        for(int z = 0; z < primeArray.length; z++){
+//            System.out.println("z : " + z + " " + primeArray[z]);
+        }
 
 //        System.out.println("index = " + k + " isPrime = " + primeArray[k]);
 
@@ -90,15 +96,15 @@ public class AlgorismTest {
             if(primeArray[a] == -1){
                 count++;
             }
-//            System.out.println("index = " + a + " count = " + count);
+            System.out.println("index = " + a + " count = " + count);
             addedList[a] = count;
         }
 
         for(int k = 0; k < result.length; k++) {
             result[k] = addedList[Q[k]] - addedList[P[k]-1 ];
             System.out.println("index = " + k + " isPrime = " + result[k]);
-//            System.out.println("Q[k] = " + Q[k] + " P[k] = " + P[k]);
-//            System.out.println("addedList[Q[k]] = " + addedList[Q[k]] + " addedList[P[k] = " + addedList[P[k]]);
+            System.out.println("Q[k] = " + Q[k] + " P[k] = " + P[k]);
+            System.out.println("addedList[Q[k]] = " + addedList[Q[k]] + " addedList[P[k] = " + addedList[P[k]]);
         }
 
     }
