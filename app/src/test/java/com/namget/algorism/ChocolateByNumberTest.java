@@ -58,4 +58,38 @@ public class ChocolateByNumberTest {
 
     }
 
+
+    @Test
+    public void fiboTest() {
+        solution(80);
+    }
+
+    public long solution(int N) {
+
+        long[] list = new long[N];
+        if (N == 0) {
+            System.out.println(0);
+//            return 0;
+        }
+        list[0] = 1;
+        int index = 1;
+        fibo(list, index);
+        for(int i = 0; i < list.length; i++){
+            System.out.println(list[i]);
+        }
+        return (list[list.length - 1] + list[list.length - 2]) * 2 + (list[list.length - 1]) * 2;
+    }
+
+    public void fibo(long[] list, int index) {
+        if (index <= 1) {
+            list[index] = 1;
+            fibo(list, ++index);
+        } else if(list.length == index) {
+            return;
+        }else{
+            list[index] = list[index - 1] + list[index - 2];
+            fibo(list, ++index);
+        }
+    }
 }
+
