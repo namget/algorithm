@@ -26,6 +26,7 @@ public class Example1 {
 
         int x = maps.length;
         int y = maps[0].length;
+
         int[][] deck = init(maps, x, y);
         int result = 0;
 
@@ -74,6 +75,7 @@ public class Example1 {
                 if (Y - length < 0 || Y + length >= deck.length) {
                     continue;
                 }
+                //거리계산
                 int abs = Math.abs(X - i) + Math.abs(Y - j);
                 if (abs > r) {
                     continue;
@@ -97,6 +99,11 @@ public class Example1 {
         return deadMonster;
     }
 
+    //deck 즉 몬스터의 배열 주변에 벽이 생기도록 일단 생성
+    //배열은 해당 길이의 두배의 + 1개의 크기
+    // 000
+    // 0x0 이렇게 생기도록
+    // 000
     public int[][] init(int[][] maps, int x, int y) {
         int[][] deck = new int[(x * 2 + 1)][(y * 2) + 1];
         for (int i = 0; i < deck.length; i++) {
